@@ -92,6 +92,7 @@ func initConfig() {
 	viper.AddConfigPath(home)
 	viper.SetConfigType("yaml")
 	viper.SetConfigName(".tchmuzik")
+	viper.SetEnvPrefix(envPrefix)
 	viper.AutomaticEnv()
 
 	if err := viper.ReadInConfig(); err == nil {
