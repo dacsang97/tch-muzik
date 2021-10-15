@@ -49,3 +49,11 @@ Run command:
 ```
 ./tch-muzik -c YOUR_CLIENT_ID -s YOUR_SECRET_KEY
 ```
+
+### Contribution
+
+Issues and PRs are welcome !
+
+### License
+
+[MIT](./LICENSE) &copy; 2021 SangND
