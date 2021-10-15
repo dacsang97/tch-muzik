@@ -1,19 +1,19 @@
 package main
 
 import (
-	"fmt"
-	"tch-muzik/internal/services/tch"
+	"tch-muzik/internal/cmd"
+
+	"github.com/rs/zerolog"
+	"github.com/rs/zerolog/pkgerrors"
 )
 
+func init() {
+	// init log
+	zerolog.TimeFieldFormat = zerolog.TimeFormatUnix
+	zerolog.ErrorStackMarshaler = pkgerrors.MarshalStack
+}
+
 func main() {
-	fmt.Println("TCH Muzik")
-
-	tchSvc := tch.NewTchService()
-
-	if song, err := tchSvc.GetTchMusicInfo(); err != nil {
-		fmt.Println(err)
-	} else {
-		fmt.Println(song)
-	}
-
+	cli := cmd.NewTchCli()
+	cli.Execute()
 }
